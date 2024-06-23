@@ -1,0 +1,31 @@
+.card{
+    width: 200px;
+    height: 450px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.card:hover{
+    box-shadow: rgba(15, 126, 182, 0.12) 0px 2px 4px 0px, rgba(18, 173, 240, 0.32) 0px 2px 16px 0px;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.image{
+    width: 180px;
+    height: 240px;
+}
+
+.btn{
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(141, 163, 179);
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: rgb(91, 104, 112);
+    transition: all 0.3s;
+    color: white;
+}
