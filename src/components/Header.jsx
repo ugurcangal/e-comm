@@ -4,12 +4,18 @@ import {CiShoppingBasket} from "react-icons/ci";
 import {CiLight} from "react-icons/ci";
 import {FaMoon} from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import Badge from '@mui/material/Badge';
+import { useDispatch, useSelector } from 'react-redux';
+import { setDrawer } from '../redux/slices/basketSlice';
 
 
 
 const Header = () => {
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const {products} = useSelector((store) => store.basket);
     
     const [theme, setTheme] = useState(false);
     
@@ -35,7 +41,9 @@ const Header = () => {
             <input className='search-input' type="text" placeholder='Bir şeyler ara' />
             <div>
                 {theme ? <CiLight className='icon' onClick={changeTheme}/> : <FaMoon className='icon' onClick={changeTheme}/>}
-                <CiShoppingBasket className='icon'/>
+                <Badge onClick={() => dispatch(setDrawer())} badgeContent={products.length} color='error'>
+                    <CiShoppingBasket className='icon'/>
+                </Badge>
             </div>
         </div>
     </div>
